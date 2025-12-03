@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G1 da CEMIG</title>
+<style>
+    /* Reset básico */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        color: #333;
+    }
+
+    /* Topo e nav */
+    header {
+        background-color: #940000;
+        color: white;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    /* Container principal centralizado */
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    /* Notícia principal */
+    .main-news h2 {
+        font-size: 32px;
+        color: black;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .main-news p {
+        margin: 10px 0;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .main-image-container img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        display: block;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    /* Footer com blocos lado a lado */
+    footer {
+        background-color: #e6e6e6;
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    .footer-news {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-news article {
+        background-color: white;
+        padding: 15px;
+        border-radius: 5px;
+        flex: 1 1 250px; /* largura mínima de 250px e cresce se houver espaço */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .footer-news h3 {
+        font-size: 18px;
+        color: #940000;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+
+    .footer-news p {
+        text-align: justify;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    footer p.copy {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    /* Responsivo */
+    @media(max-width: 800px) {
+        .footer-news {
+            flex-direction: column;
+        }
+    }
+    .carousel-container {
+    position: relative;
+    max-width: 100%;
+    max-height: 400px; /* altura máxima */
+    margin: 20px 0;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.carousel-image {
+    width: 100%;
+    display: none;
+    object-fit: cover;
+}
+
+.carousel-image.active {
+    display: block;
+}
+
+/* Botões de navegação */
+.carousel-container .prev,
+.carousel-container .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+.carousel-container .prev {
+    left: 10px;
+}
+
+.carousel-container .next {
+    right: 10px;
+}
+
+.carousel-container .prev:hover,
+.carousel-container .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <img src="logo-cemig.png" alt="Logo CEMIG" style="height:50px; margin-right:15px;">
+    <h1>G1 da CEMIG</h1>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Notícias</a>
+        <a href="#">Colunas</a>
+        <a href="#">Sobre</a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="main-news">
+        <h2>Mãe abandona filho no escritório e parte para férias paradisíacas</h2>
+        <div class="main-image-container">
+            <img src="Imagem 1.jpg" alt="Mãe em férias">
+        </div>
+
+        <p>Em uma situação dramática para o setor elétrico de Minas Gerais, a mãe conhecida como Lorrayne Pacheco Cassemiro decidiu que precisava de descanso e deixou seu filho enfrentando sozinho a alta demanda de TAF, e-mails e ligações de fornecedores indignados. Enquanto ela curte praias e drinks exóticos, o filho se esforça para sobreviver à rotina intensa do escritório.</p>
+
+        <p>O jovem, cuja a idade não foi revelada, relata que teve que realizar tarefas extras durante a ausência da mãe para manter o emprego. Ele diz que não é a primeira, nem será a última vez que a mãe o deixa nessas condições.</p>
+
+        <p>"Teve dia que eu não saí de ligação; tinha que desligar uma chamada e já ir para outra. Só de lembrar... me dá até vontade de chorar."</p>
+
+        <div class="carousel-container">
+    <img src="Imagem 2.jpg" alt="Férias 1" class="carousel-image active">
+    <img src="Imagem 3.jpg" alt="Férias 2" class="carousel-image">
+    <img src="Imagem 4.jpg" alt="Férias 3" class="carousel-image">
+
+    <!-- Botões de navegação -->
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+</div>
+        
+        <p>Ao tentar entrar em contato com outros familiares, a tia informou que a mãe nunca deixou faltar nada para a criança, que ela precisava descansar e que o filho precisa crescer e começar a trabalhar.</p>
+
+        <p>Especialistas alertam que a situação é crítica e recomendam 8 horas de sono, desligar os aparelhos eletrônicos durante o horário comercial, como notebooks e celulares, além da instalação de café ilimitado e chocolate escondido nas gavetas para manter a sanidade do jovem colaborador.</p>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-news">
+        <article>
+            <h3>Dicas de sobrevivência</h3>
+            <p>1. Não atender pessoas chatas<br>2. Snacks secretos ajudam na produtividade.<br>3. Respire fundo e finja que sabe o que está fazendo.</p>
+        </article>
+        <article>
+            <h3>Planejando a revanche</h3>
+            <p>O filho abandonado já prepara memes, para curtir 3 meses de férias. Além das férias, jovem relata que irá jogar na megasena e abandonar a familia.</p>
+        </article>
+        <article>
+            <h3>Últimas do escritório</h3>
+            <p>Enquanto a mãe curte o sol, o filho descobriu talentos ocultos, como resistência a café ruim.</p>
+        </article>
+    </div>
+    <p class="copy">&copy; 2025 G1 da CEMIG</p>
+</footer>
+<script>
+let slideIndex = 0;
+const slides = document.querySelectorAll(".carousel-image");
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if(i === index) slide.classList.add("active");
+    });
+}
+
+// Mostrar o primeiro slide inicialmente
+showSlide(slideIndex);
+
+// Função para avançar
+function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+}
+
+// Função para voltar
+function prevSlide() {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+}
+
+// Troca automática a cada 4 segundos
+setInterval(nextSlide, 4000);
+</script>
+</body>
+</html>
